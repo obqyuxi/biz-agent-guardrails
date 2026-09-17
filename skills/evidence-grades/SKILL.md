@@ -1,6 +1,6 @@
 ---
 name: evidence-grades
-description: Use when 输出含事实、数字、状态或「是否已完成」的判断，需要强制区分已核实与猜测。
+description: Use when the reply includes facts, numbers, status, or done/not-done judgments that must separate verified claims from guesses.
 ---
 
 # 证据等级

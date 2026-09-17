@@ -1,6 +1,6 @@
 ---
 name: read-vs-write
-description: Use when 任务涉及查数据、改数据、改配置、发消息或生产变更，需要强制查改分离与越权拒绝。
+description: Use when the task involves looking up data, changing data, changing config, sending messages, or production changes — enforce read/write separation and refuse unauthorized writes.
 ---
 
 # 查数据 ≠ 改数据

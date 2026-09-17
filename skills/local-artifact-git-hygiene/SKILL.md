@@ -1,6 +1,6 @@
 ---
 name: local-artifact-git-hygiene
-description: Use when Agent 在仓库内生成查询结果、导出、scratch 文件，需要避免污染共享 git 规则或其他人的工作树。
+description: Use when an agent writes query results, exports, or scratch files inside a repo and must not pollute shared git ignore rules or other people's trees.
 ---
 
 # 本地产物与 Git 卫生

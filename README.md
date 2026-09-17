@@ -1,68 +1,62 @@
-# 业务 Agent 护栏（biz-agent-guardrails）
+# biz-agent-guardrails
 
-面向 **Codex / Cursor / Claude Code / Hermes 类 Agent** 的可安装技能包：让日常业务协作更安全、交付更可转发、证据更清楚。
+Installable skill pack for **Codex / Cursor / Claude Code / Hermes-style agents**: safer day-to-day business collaboration, forwardable handoffs, and clearer evidence.
 
-中文为主。English notes at the bottom.
+**English is the default.** [中文说明](README.zh-CN.md)
 
-## 这是什么
+## What this is
 
-一组可复用的 Agent Skills / 规则片段，解决这些反复出现的问题：
+Reusable Agent Skills / rule snippets for problems that keep showing up:
 
-| 问题 | 对应 skill |
-|------|------------|
-| 回复绕、不先给结论 | `conclusion-first-zh` |
-| 把猜测写成事实 | `evidence-grades` |
-| 查数任务偷偷改库/改配置 | `read-vs-write` |
-| 交付物没法直接转发 | `forwardable-handoff` |
-| 直接改原文导致无法回溯 | `doc-versioning-v2` |
-| Agent 本地产物污染共享仓库 | `local-artifact-git-hygiene` |
+| Problem | Skill |
+|---------|-------|
+| Replies wander; no conclusion first | `conclusion-first-zh` |
+| Guesses written as facts | `evidence-grades` |
+| "Just look up the numbers" quietly writes to DB/config | `read-vs-write` |
+| Deliverables cannot be forwarded as-is | `forwardable-handoff` |
+| Overwriting source docs breaks history | `doc-versioning-v2` |
+| Agent scratch pollutes shared git trees | `local-artifact-git-hygiene` |
 
-## 不是什么
+## What this is not
 
-- 不是某一家公司的 BI / ERP 业务代码
-- 不包含真实客户数据、SQL、密钥、内网地址
-- 不是又一个「万能 Agent 框架」
+- Not one company's BI / ERP business code
+- No real customer data, SQL, secrets, or private network hosts
+- Not another "universal agent framework"
 
-## 安装（任选）
+## Install (pick one)
 
-### Codex / 通用 AGENTS.md
+### Codex / generic `AGENTS.md`
 
-把 [`templates/AGENTS.snippet.md`](templates/AGENTS.snippet.md) 粘贴进项目或全局 `AGENTS.md`，再按需 `skill_view` / 引用 `skills/*/SKILL.md`。
+Paste [`templates/AGENTS.snippet.md`](templates/AGENTS.snippet.md) into a project or global `AGENTS.md`, then load `skills/*/SKILL.md` as needed.
 
 ### Cursor / Claude Code Skills
 
-将 `skills/` 下需要的目录复制到你的 skills 根目录（或做成插件），确保每个 `SKILL.md` 的 frontmatter `name` / `description` 可被发现。
+Copy the folders you need under `skills/` into your skills root (or ship as a plugin). Each `SKILL.md` needs discoverable frontmatter `name` / `description`.
 
-### 最小用法
+### Minimal set
 
-1. 只装 `evidence-grades` + `read-vs-write`（护栏最小集）
-2. 业务交付再加 `forwardable-handoff`
-3. 文档协作再加 `doc-versioning-v2`
+1. Install only `evidence-grades` + `read-vs-write` (smallest guardrail set)
+2. Add `forwardable-handoff` for business handoffs
+3. Add `doc-versioning-v2` for document collaboration
 
-## 仓库结构
+## Layout
 
 ```
-skills/           # 可安装技能
-templates/        # AGENTS 片段、示例日报、拒答话术
-examples/         # 虚构场景前后对比
-CONTRIBUTING.md   # 如何加一条 skill
-ROADMAP.md        # 下一周可以加什么
+skills/           # installable skills
+templates/        # AGENTS snippet, sample daily report, refusal scripts
+examples/         # fictional before/after
+CONTRIBUTING.md   # how to add a skill
+ROADMAP.md        # what might land next
 ```
 
-## 安全与隐私
+## Security & privacy
 
-提交前自查：无真实姓名/手机/会员号、无连接串、无 Bot Secret、无内网 IP。示例数字必须标明 `EXAMPLE`。
+Before you commit: no real names / phones / member IDs, no connection strings, no bot secrets, no private IPs. Mark sample numbers with `EXAMPLE`.
 
-## 维护节奏
+## Maintenance
 
-建议每周从真实踩坑提炼 **至多 1～2** 条 skill/模板更新，见 `ROADMAP.md` 与 `CHANGELOG.md`。
+Prefer at most **1–2** skill or template updates per week, distilled from real mistakes. See `ROADMAP.md` and `CHANGELOG.md`.
 
 ## License
 
 MIT
-
----
-
-## English
-
-**biz-agent-guardrails** is a small, Chinese-first skill pack for coding/business agents: conclusion-first replies, evidence grades, read-vs-write separation, forwardable handoffs, v2 doc versioning, and local artifact git hygiene. No vendor lock-in and no real secrets. Copy skills into your agent skill root or paste the AGENTS snippet.

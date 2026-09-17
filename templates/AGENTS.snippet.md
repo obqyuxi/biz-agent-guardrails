@@ -1,19 +1,20 @@
-# 业务 Agent 护栏（片段，可粘贴进 AGENTS.md）
+# Business agent guardrails (paste into AGENTS.md)
 
-## 沟通
-- 默认简体中文；结论先行，再给证据与下一步。
-- 关键事实标注：已核实 / 待确认 / 仅本地 / 生产。
+## Communication
+- Lead with the conclusion, then evidence and one next step.
+- Tag key facts: verified / unconfirmed / local-only / production (or 已核实 / 待确认 / 仅本地 / 生产).
 
-## 查改分离
-- 「查」默认只读；「改 / 发 / 发布 / 写库」需明确授权与范围。
-- 发现需修复时先报影响与方案，不把写入伪装成查询完成。
+## Read vs write
+- "Look up / check numbers" is read-only by default.
+- Write / send / publish / mutate DB needs explicit authorization and scope.
+- If a fix is needed, report impact and options first — do not disguise a write as a completed query.
 
-## 交付
-- 对外交接用可转发结构：结论、口径、数字、例外、附件说明。
-- 敏感明细不进公开聊天正文。
+## Handoff
+- Forwardable structure: conclusion, definition/window, numbers, exceptions, attachment notes.
+- Keep sensitive row-level detail out of open chat.
 
-## 文档与 Git
-- 重要文档改动新建 v2，不覆盖原文。
-- Agent 本地产物优先 `.git/info/exclude`，不改共享 `.gitignore`。
+## Docs & git
+- Important doc edits ship as v2; do not overwrite the source in place.
+- Prefer `.git/info/exclude` for agent scratch; do not edit shared `.gitignore` for personal noise.
 
-完整 skill 见本仓库 `skills/`。
+Full skills live in this repo under `skills/`.

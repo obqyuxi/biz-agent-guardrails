@@ -1,17 +1,17 @@
 # Roadmap
 
-可持续维护原则：每周最多合入 1～2 条「本周真实踩坑」提炼出的 skill 或模板，宁少勿空。
+Sustainable pace: merge at most 1–2 skills or templates per week, distilled from real mistakes. Prefer fewer, sharper rules over empty coverage.
 
-## Next (候选)
+## Next (candidates)
 
-1. **authority-boundary** — 明确「分析 / 改代码 / 发消息 / 生产写入」各自需要的授权语句示例
-2. **metric-staleness-check** — 带日期的指标必须复核分支、端点、配置与生产状态
-3. **pii-chat-vs-workbook** — 聊天只给汇总；敏感明细进受控表格
-4. **agent-a2a-handoff** — Agent 之间交接时的输入/输出/完成判据模板
-5. **skill-acceptance-checklist** — 新 skill 合入前的最小验收清单
+1. **authority-boundary** — example authorization phrases for analyze / edit code / send messages / production writes
+2. **metric-staleness-check** — dated metrics must re-check branch, endpoint, config, and production state
+3. **pii-chat-vs-workbook** — chat stays summary-only; sensitive detail goes to a controlled spreadsheet
+4. **agent-a2a-handoff** — input / output / done criteria when one agent hands off to another
+5. **skill-acceptance-checklist** — minimal checklist before merging a new skill
 
 ## Explicit non-goals
 
-- 不绑定某一家 BI / ERP / 医美厂商
-- 不收录真实 SQL、连接串、企微 Bot 凭据
-- 不做通用大而全「Agent 框架」
+- No binding to a single BI / ERP / clinic vendor
+- No real SQL, connection strings, or WeCom bot credentials
+- No large "universal agent framework"

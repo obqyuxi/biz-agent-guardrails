@@ -1,6 +1,6 @@
 ---
 name: doc-versioning-v2
-description: Use when 修改需求文档、口径说明、交接文档或 PRD，需要保留原文可回溯而不是原地覆盖。
+description: Use when editing requirements, metric definitions, handoff docs, or PRDs and you must keep the prior version reviewable instead of overwriting in place.
 ---
 
 # 文档版本：新建 v2，不覆盖原文

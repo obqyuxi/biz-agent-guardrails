@@ -1,29 +1,28 @@
-# 贡献指南
+# Contributing
 
-## 加一条 Skill
+[中文版](CONTRIBUTING.zh-CN.md)
 
-1. 在 `skills/<kebab-id>/` 新建 `SKILL.md`
-2. Frontmatter 必须含：
+## Add a skill
+
+1. Create `skills/<kebab-id>/SKILL.md`
+2. Frontmatter must include:
 
 ```yaml
 ---
 name: kebab-id
-description: Use when …（一句话说明何时加载）
+description: Use when … (one line on when to load this skill)
 ---
 ```
 
-3. 正文用简体中文写清：适用/不适用、硬规则、步骤、坑、验收
-4. 禁止：真实 PII、密钥、内网主机名、可识别的客户业务 SQL
-5. 更新 `README.md` 表格、`CHANGELOG.md`、必要时 `ROADMAP.md`
-6. 示例数据统一加 `EXAMPLE` 标记
+3. Body should cover: when it applies / when it does not, hard rules, steps, pitfalls, acceptance. Prefer **English** for new skills; Chinese-only is OK only when the skill is intentionally locale-specific (e.g. `conclusion-first-zh`).
+4. Forbidden: real PII, secrets, private hostnames, identifiable customer SQL
+5. Update the skill table in `README.md` (and `README.zh-CN.md` if needed), `CHANGELOG.md`, and `ROADMAP.md` when relevant
+6. Mark sample data with `EXAMPLE`
 
-## 验收（合入前）
+## Acceptance (before merge)
 
-- [ ] `name` 与目录名一致
-- [ ] `description` 以 “Use when” / “用于……” 开头，便于 Agent 检索
-- [ ] 陌生人能在不了解作者公司的情况下复用
-- [ ] 无密钥与真实客户信息
-
-## PR 说明
-
-用一两句话说清：这条 skill 解决什么反复出错；附一个虚构 before/after（可放 `examples/`）。
+- [ ] Frontmatter `name` matches folder id
+- [ ] Description starts with `Use when`
+- [ ] No secrets / private hosts / real customer identifiers
+- [ ] README table updated
+- [ ] CHANGELOG entry added

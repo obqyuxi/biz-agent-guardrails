@@ -1,6 +1,6 @@
 ---
 name: conclusion-first-zh
-description: Use when 用简体中文回复业务或技术任务，需要先给结论再给证据，避免绕圈和栏目堆砌。
+description: Use when answering business or technical tasks in Simplified Chinese and you must lead with the conclusion, then evidence — no wandering or heading stacks.
 ---
 
 # 结论先行（简体中文）

@@ -1,6 +1,6 @@
 ---
 name: forwardable-handoff
-description: Use when 需要把业务结论交给同事转发（企微/邮件/表格），而不是给一长串过程叙述。
+description: Use when a business conclusion must be forwardable (WeCom / email / spreadsheet) instead of a long process dump.
 ---
 
 # 可转发交接
