@@ -1,0 +1,33 @@
+name: skill-frontmatter
+
+on:
+  push:
+    paths:
+      - "skills/**"
+      - ".github/workflows/skill-frontmatter.yml"
+  pull_request:
+    paths:
+      - "skills/**"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check SKILL.md frontmatter
+        run: |
+          set -e
+          ok=1
+          for f in skills/*/SKILL.md; do
+            echo "== $f"
+            head -n 1 "$f" | grep -qx -- '---' || { echo "missing opening frontmatter"; ok=0; }
+            grep -qE '^name: [a-z0-9-]+$' "$f" || { echo "missing name"; ok=0; }
+            grep -qE '^description: .+' "$f" || { echo "missing description"; ok=0; }
+            dir=$(basename "$(dirname "$f")")
+            name=$(grep -E '^name: ' "$f" | head -1 | sed 's/^name: //')
+            if [ "$dir" != "$name" ]; then
+              echo "dir '$dir' != name '$name'"
+              ok=0
+            fi
+          done
+          test "$ok" -eq 1
